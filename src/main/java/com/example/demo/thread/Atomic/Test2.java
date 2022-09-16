@@ -48,7 +48,7 @@ interface DecimalAccount{
 
     static void demo(DecimalAccount account) {
         List<Thread> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 9; i++) {
             list.add(new Thread(() -> {
                 account.withDraw(BigDecimal.TEN);
             }));
@@ -61,6 +61,6 @@ interface DecimalAccount{
                 e.printStackTrace();
             }
         });
-        System.out.println(account.getBalance());
+        System.out.println("还剩余：" + account.getBalance());
     }
 }
