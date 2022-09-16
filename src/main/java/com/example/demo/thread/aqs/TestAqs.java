@@ -15,6 +15,7 @@ public class TestAqs {
             try {
                 log.debug("locking");
                 try {
+                    // 1秒以后t2线程加锁
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -56,7 +57,7 @@ class MyLock implements Lock {
         protected boolean tryRelease(int arg) {
             // 设置owner线程为空,该行放在前面才会加写屏障，是其他线程可见
             setExclusiveOwnerThread(null);
-            // volatile操作
+            // volatile操作，因为释放锁的时候已经拿到了锁，所以不需要cas操作
             setState(0);
             return true;
         }
