@@ -38,7 +38,8 @@ public class RabbitMqConfig {
      */
     @Bean
     public Queue orderQueue() {
-        return new Queue(QueueEnum.QUEUE_ORDER_CANCEL.getName());
+        return QueueBuilder.durable(QueueEnum.QUEUE_ORDER_CANCEL.getName()).build();
+//        return new Queue(QueueEnum.QUEUE_ORDER_CANCEL.getName());
     }
 
     /**

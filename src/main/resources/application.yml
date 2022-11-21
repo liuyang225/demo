@@ -1,6 +1,6 @@
 # 开发环境配置
 server:
-  port: 8080
+  port: 8088
 
 # 日志配置
 logging:
@@ -21,6 +21,15 @@ spring:
        max-file-size:  10MB
        # 设置总上传的文件大小
        max-request-size:  20MB
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      max-active: 100
+      max-idle: 10
+      max-wait: 100000
 
   rabbitmq:
     host: localhost

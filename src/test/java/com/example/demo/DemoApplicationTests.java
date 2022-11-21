@@ -65,11 +65,7 @@ public class DemoApplicationTests {
 
     @Test
     public void send() {
-        sender.sendMessage(1L,100,null);
+        sender.sendMessage(1L,100,"hello!!!!!");
     }
 
-    @Test
-    public void receive() {
-        receiver.handle(1L);
-    }
 }
