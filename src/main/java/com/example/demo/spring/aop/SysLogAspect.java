@@ -21,7 +21,7 @@ import java.util.Date;
 public class SysLogAspect {
 
     //切点
-    @Pointcut("@annotation(com.example.demo.spring.aop.SystemLog)")
+    @Pointcut("@annotation(SystemLog)")
     public void logPointcut(){}
 
     //后置通知
